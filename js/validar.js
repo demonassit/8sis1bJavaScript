@@ -59,4 +59,35 @@ function validar(formulario){
         formulario.nombre.focus();
         return false;
     }
+
+    /*
+    vamos a crear el fragmento de codigo para verificar que dentro del campo
+    de nombre solo se ingresen letras
+    */
+
+    var checkStr = formulario.nombre.value; //obtener el valor de nombre
+
+    //definir lo que es correcto para esta validacion
+
+    var checkOK = "qwertyuiopasdfghjklñzxcvbnm"+ "QWERTYUIOPASDFGHJKLÑZXCVBNM";
+    
+    //variable para devolver si es v o f el valor
+    var allValid = true;
+
+    for(i = 0; i < checkStr.length; i++){
+        var ch = checkStr.charAt(i);
+        for(j = 0; j < checkOK.length; j++)
+        if(ch == checkOK.charAt(j))
+            break;
+        if(j == checkOK.length){
+            allValid = false;
+            break;
+        }
+    }
+
+    if(!allValid){
+        alert("Escriba solo letras en el campo nombre");
+        formulario.nombre.value;
+        return false;
+    }
 }
