@@ -121,4 +121,20 @@ function validar(formulario){
        formulario.edad.value;
        return false;
    }
+
+
+   /*
+   una funcion que se encargue de validar el correo electronico a
+   traves de una expresion regular
+   xxxxx@xxxx.xxx     xxxx.xxxx@xxxxx.xxxx.xxx
+   formato de cadena ya sea de salida o de entrada
+   */
+
+   var txt = formulario.email.value;
+
+   var b =  /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;
+
+   alert("Email "+ (b.test(txt)?"":"no")+ "valido");
+
+   return b.test(txt);
 }
