@@ -8,13 +8,9 @@ apartir de una expresion regular con el uso de un evento de teclado
 function validarn(e) {
     
     var teclado = (document.all)?e.keyCode:e.which;
-
     if(teclado == 8) return true;
-
-    var patron = /[0-9]\d ./;
-
+    var patron = /[0-9\d .]/;
     var tec = String.fromCharCode(teclado);
-
     return patron.test(tec);
 }
 
